@@ -1,1 +1,11 @@
-<p>keypad works!</p>
+<div class="row mt-3">
+  <div class="col-lg-4 offset-lg-4">
+    <button
+      class="btn btn-info w-100 shadow-sm"
+      [disabled]="questionService.btnDisabled"
+      (click)="next()"
+    >
+      {{ btnString }}
+    </button>
+  </div>
+</div>

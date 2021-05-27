@@ -1,1 +1,22 @@
-<p>questions works!</p>
+<h4 class="card-title">{{ getQuestion() }}</h4>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let answer of questions[questionService.index].answers"
+    (click)="selectedQuestion(answer)"
+    [ngClass]="addClassOption(answer)"
+  >
+    {{ answer.name }}
+    <mat-icon aria-hidden="false" class="correct" *ngIf="iconCorrect(answer)">
+      check_circle
+    </mat-icon>
+    <mat-icon
+      aria-hidden="false"
+      class="incorrect"
+      *ngIf="iconIncorrect(answer)"
+    >
+      clear
+    </mat-icon>
+  </li>
+</ul>
+<app-keypad></app-keypad>

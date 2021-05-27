@@ -1,0 +1,18 @@
+.list-group-item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.correct {
+  color: #17ab2b;
+  position: absolute;
+  right: 3rem;
+}
+.incorrect {
+  color: #da2d2d;
+  position: absolute;
+  right: 1rem;
+}
