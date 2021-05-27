@@ -22,9 +22,13 @@ export class QuestionsComponent implements OnInit {
     return this.questions[this.questionService.index].description;
   }
 
-  selectedQuestion(answer: Answer) {
+  selectedQuestion(answer: Answer, index: number) {
+    if (this.questionService.confirmedAnswer === true) {
+      return;
+    }
     this.questionService.answerSelected = answer;
     this.questionService.btnDisabled = false;
+    this.questionService.answerIndex = index;
   }
 
   addClassOption(answer: Answer) {

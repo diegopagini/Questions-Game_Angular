@@ -2,8 +2,11 @@
 <ul class="list-group">
   <li
     class="list-group-item"
-    *ngFor="let answer of questions[questionService.index].answers"
-    (click)="selectedQuestion(answer)"
+    *ngFor="
+      let answer of questions[questionService.index].answers;
+      let i = index
+    "
+    (click)="selectedQuestion(answer, i)"
     [ngClass]="addClassOption(answer)"
   >
     {{ answer.name }}

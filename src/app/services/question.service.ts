@@ -10,6 +10,8 @@ export class QuestionService {
   public answerSelected: Answer;
   public btnDisabled: boolean = true;
   public confirmedAnswer: boolean = false;
+  public answerIndex;
+  public userAnswers: number[] = [];
   public questions: Question[] = [
     {
       description: '¿Cual es la capital de Argentina?',
