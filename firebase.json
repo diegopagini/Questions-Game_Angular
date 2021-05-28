@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/question-game",
+    "public": "docs/questions-game",
     "ignore": [
       "firebase.json",
       "**/.*",
