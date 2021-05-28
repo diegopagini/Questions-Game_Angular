@@ -1,1 +1,44 @@
-<p>answers works!</p>
+<h2 class="card-title">Resultado</h2>
+<h3 class="card-text">Este es el resultado del cuestionario!</h3>
+<hr />
+<br />
+<div *ngFor="let question of questionList; let i = index">
+  <h4 class="card-title mt-3">{{ question.description }}</h4>
+  <ul class="list-group">
+    <ng-container *ngFor="let answer of questionList[i].answers; let j = index">
+      <li
+        class="list-group-item"
+        [ngClass]="{
+          'list-group-item-success':
+            answer.isCorrect === 1 && answerList[i] == j,
+          'list-group-item-danger': answer.isCorrect === 0 && answerList[i] == j
+        }"
+      >
+        {{ answer.name }}
+        <mat-icon
+          aria-hidden="false"
+          class="correct"
+          *ngIf="answer.isCorrect === 1 && answerList[i] == j"
+        >
+          check_circle
+        </mat-icon>
+        <mat-icon
+          aria-hidden="false"
+          class="incorrect"
+          *ngIf="answer.isCorrect === 0 && answerList[i] == j"
+        >
+          clear
+        </mat-icon>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+<br />
+
+<div class="row mt-3">
+  <div class="col-lg-4 offset-lg-4">
+    <button class="btn btn-info w-100 shadow-sm" (click)="return()">
+      Volver
+    </button>
+  </div>
+</div>

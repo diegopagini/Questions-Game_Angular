@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Answer } from 'src/app/models/answer.interface';
 import { Question } from 'src/app/models/question.interface';
 import { QuestionService } from 'src/app/services/question.service';
@@ -8,18 +8,14 @@ import { QuestionService } from 'src/app/services/question.service';
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.scss'],
 })
-export class QuestionsComponent implements OnInit {
+export class QuestionsComponent {
   public questions: Question[];
   constructor(public questionService: QuestionService) {
     this.questions = this.questionService.getQuestions();
   }
 
-  ngOnInit(): void {
-    console.log(this.questions);
-  }
-
   getQuestion() {
-    return this.questions[this.questionService.index].description;
+    return this.questions[this.questionService.questionIndex].description;
   }
 
   selectedQuestion(answer: Answer, index: number) {

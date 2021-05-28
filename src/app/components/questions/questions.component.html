@@ -3,7 +3,7 @@
   <li
     class="list-group-item"
     *ngFor="
-      let answer of questions[questionService.index].answers;
+      let answer of questions[questionService.questionIndex].answers;
       let i = index
     "
     (click)="selectedQuestion(answer, i)"

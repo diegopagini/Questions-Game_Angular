@@ -6,11 +6,11 @@ import { Question } from '../models/question.interface';
   providedIn: 'root',
 })
 export class QuestionService {
-  public index: number = 0;
+  public questionIndex: number = 0;
   public answerSelected: Answer;
   public btnDisabled: boolean = true;
   public confirmedAnswer: boolean = false;
-  public answerIndex;
+  public answerIndex: number;
   public userAnswers: number[] = [];
   public questions: Question[] = [
     {
